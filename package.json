@@ -1,0 +1,29 @@
+{
+  "name": "portfoliosite",
+  "version": "1.0.0",
+  "description": "Portfolio site for Ubaid Delawala",
+  "requires": true,
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "^12.0.0",
+    "npm": "^7.00.0"
+  },
+  "author": "Ubaid Delawala",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "bootstrap": "^5.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jquery": "^3.6.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.13",
+    "popper.js": "^1.16.1"
+  }
+}
