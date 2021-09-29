@@ -3,11 +3,40 @@
  <%- include partials/main_nav.ejs%>
   
     <!-- Main Content-->
-    Welcome to the <%= page %> page.
+  <main class="container">
+    <h1 class="d-flex justify-content-center">Contact Me</h1>
+    <form  method="POST">
+      <div class="form-group ">
+        <label for="nameInput">Name:</label>
+        <input type="text" class="form-control" id="nameInput" required placeholder="Your Name">
+      </div>
+      <div class="form-group">
+        <label for="emailInput">Email:</label>
+        <input type="email" class="form-control" id="emailInput" required placeholder="something@example.com">
+      </div>
+      <div class="form-group">
+        <label for="textInput">Subject:</label>
+        <textarea class="form-control" id="textInput1" rows="5" maxlength="300" style="resize: none;" required placeholder="Your message... (300 Character limit)"></textarea>
+      </div>
+      <input class="btn btn-primary submit" type="submit" value="Submit">
 
-    
-    
+    </form>
+  
+</main>
+  <div class=" address"> 
+    <address>
+  <strong>Canada</strong><br>
+    Scarborough<br>
+  Toronto, ON <br>
+  <abbr title="Phone">P:</abbr> (647) 786-5209
+</address>
 
+<address>
+  <strong>Ubaid Delawala</strong><br>
+  <a href="mailto:#">delawalaubaid@gmail.com</a>
+</address>
+  
+</div> 
   <%- include partials/bottom_nav.ejs%>
   
   <%- include partials/footer.ejs%>
