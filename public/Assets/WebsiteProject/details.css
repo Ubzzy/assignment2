@@ -1,0 +1,42 @@
+﻿body {
+    background-color:#EBF7FA;
+    margin:0px;
+	color: black;
+	font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+#gallery
+{
+ position: relative;
+ left:0px
+}
+#gallery ul
+{
+ list-style-type: none; width: 300px;
+}
+#gallery li
+{
+ display: inline; float: left; padding-left:0px;
+}
+#gallery img
+{
+ border-style: none;
+}
+#gallery a
+{
+ text-decoration: none;
+ font-style: italic;
+ color: #333;
+}
+#gallery span
+{
+ display: none;
+}
+#gallery a:hover span
+{
+	box-shadow: 0 0 20px #808080;
+	display: block;
+	position: absolute;
+	text-align: center;
+	left: 300px;
+	top: 0px;
+}
