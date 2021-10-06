@@ -7,7 +7,7 @@ var city = document.getElementById('userInput').value;
      weatherInfo(city);
      
 function weatherInfo( city ) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid=55c08174bf03994d6ad185d5dd2010ce')  
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid=')  
     .then(function(resp) { return resp.json() })
     .then(function(data) {
         drawWeather(data);
@@ -24,7 +24,7 @@ function geoLocation(){
 
 function geoWeatherInfo(position) { 
 
-      fetch('https://api.openweathermap.org/data/2.5/weather?lat='+ position.coords.latitude + '&lon='+ position.coords.longitude +'&appid=55c08174bf03994d6ad185d5dd2010ce')  
+      fetch('https://api.openweathermap.org/data/2.5/weather?lat='+ position.coords.latitude + '&lon='+ position.coords.longitude +'&appid=')  
      .then(function(resp) { return resp.json() })
      .then(function(data) {
          drawWeather(data);
