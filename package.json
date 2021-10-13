@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "engines": {
-    "node": "^12.0.0",
+    "node": "^16.0.0",
     "npm": "^7.00.0"
   },
   "author": "Ubaid Delawala",
