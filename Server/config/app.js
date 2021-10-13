@@ -2,7 +2,7 @@ let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
-let logger = require('morgan');
+let morgan = require('morgan');
 
 //Database setup
 let mongoose = require('mongoose');
