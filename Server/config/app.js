@@ -17,9 +17,9 @@ mongodb.once('open', ()=>{
   console.log('Connected to MongoDB...')
 });
 
-let indexRouter = require('../Server/routes/index');
-let usersRouter = require('../Server/routes/users');
-let booksRouter = require('../Server/routes/book');
+let indexRouter = require('../routes/index');
+let usersRouter = require('../routes/users');
+let booksRouter = require('../routes/book');
 
 let app = express();
 
@@ -31,8 +31,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '../public'))); 
-app.use(express.static(path.join(__dirname, '../node_modules')));
+app.use(express.static(path.join(__dirname, '../../public'))); 
+app.use(express.static(path.join(__dirname, '../../node_modules')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
