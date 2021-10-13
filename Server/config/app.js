@@ -3,7 +3,7 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-require('Dotenv').config();
+Let dotenv = require('Dotenv');
 
 //Database setup
 let mongoose = require('mongoose');
