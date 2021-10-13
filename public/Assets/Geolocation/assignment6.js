@@ -3,11 +3,12 @@
 //Weather Section
 
 //get weather details based on city name
+
 var city = document.getElementById('userInput').value;
      weatherInfo(city);
      
 function weatherInfo( city ) {
-    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid=')  
+    fetch('https://api.openweathermap.org/data/2.5/weather?q='+ city +'&appid='+ key)  
     .then(function(resp) { return resp.json() })
     .then(function(data) {
         drawWeather(data);
