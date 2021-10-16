@@ -4,6 +4,10 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 
+
+const dotenv = require('dotenv');
+  dotenv.config();
+
 //Database setup
 let mongoose = require('mongoose');
 let db = require('./db');

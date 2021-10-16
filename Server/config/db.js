@@ -1,7 +1,7 @@
-let password = process.env.password;
+let DB_URI = process.env.DB_URI;
 
 module.exports =
 {
-    "URI" : "mongodb+srv://Ubaid:" + "Mongo2003" + "@store.mlyz6.mongodb.net/book_store"
+    "URI" : DB_URI
     //"URI" : "mongodb://localhost/book_store"
 }
