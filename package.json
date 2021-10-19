@@ -1,5 +1,5 @@
 {
-  "name": "portfoliosite",
+  "name": "assignment2",
   "version": "1.0.0",
   "description": "Portfolio site for Ubaid Delawala",
   "requires": true,
@@ -13,9 +13,7 @@
   },
   "author": "Ubaid Delawala",
   "license": "ISC",
-
-  "dependencies": 
-  {
+  "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
     "bootstrap": "^5.1.1",
     "cookie-parser": "~1.4.4",
@@ -32,5 +30,14 @@
     "nodemon": "^2.0.13",
     "passport": "^0.5.0",
     "popper.js": "^1.16.1"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ubzzy/assignment2.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Ubzzy/assignment2/issues"
+  },
+  "homepage": "https://github.com/Ubzzy/assignment2#readme"
 }
