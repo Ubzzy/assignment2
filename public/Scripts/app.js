@@ -13,6 +13,7 @@
                 {
                     event.preventDefault();
                     window.Location.assign('./book-list')
+                    
                 }
             })
         }
