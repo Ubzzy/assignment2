@@ -63,11 +63,11 @@ app.use(passport.session());
 
 // Create a User model
 let userModel = require('../models/user');
-let user = userModel.user;
+let User = userModel.User;
 
 // serialize and de-serialize user info
-passport.serializeUser(user.serializeUser());
-passport.deserializeUser(user.deserializeUser())
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser())
 
 
 app.use('/', indexRouter);
