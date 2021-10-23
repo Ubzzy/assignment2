@@ -8,19 +8,19 @@
   <main class="container">
     <div class="row">
         <div>
-            <h1>Books </h1> <br>
+            <h1>Business Contacts</h1> <br>
 
             <% if(typeof displayName == 'string' && displayName) { %>
             <a href="/book-list/add" class="btn btn-primary" style="margin-bottom:10px;" role="button">
-            <i class="fas fa-plus-circle"></i> Add a Book </a>
+            <i class="fas fa-plus-circle"></i> Add a Contact </a>
             <% } %>
 
             <table class="table table-bordered table-striped table-hover ">
                 <tr class="table-dark">
-                    <th class="text-center col-4">Name</th>
-                    <th class="text-center col-3">Author</th>
-                    <th class="text-center col-1">Year</th>
-                    <th class="text-center col-1">Price</th>
+                    <th class="text-center col-2">Organization</th>
+                    <th class="text-center col-2">Name</th>
+                    <th class="text-center col-4">Email</th>
+                    <th class="text-center col-2">Phone</th>
 
                     <% if(typeof displayName == 'string' && displayName) { %>
                     <th class="text-center col-1"></th>
@@ -30,21 +30,21 @@
                 </tr> 
                 
                 <!-- Repeatable Template Row-->
-                <% for(let count = 0; count < BookList.length; count++) { %>
+                <% for(let count = 0; count < ContactList.length; count++) { %>
                     <tr class="table-light">
-                        <td class="text-center col-4"><%= BookList[count].name %> </td>
-                        <td class="text-center col-4"><%= BookList[count].author %></td>
-                        <td class="text-center col-1"><%= BookList[count].published %></td>
-                        <td class="text-center col-1"><%= BookList[count].price %></td>
+                        <td class="text-center col-2"><%= ContactList[count].organization %> </td>
+                        <td class="text-center col-2"><%= ContactList[count].name %></td>
+                        <td class="text-center col-4"><%= ContactList[count].email %></td>
+                        <td class="text-center col-2"><%= ContactList[count].phone %></td>
 
                         <% if(typeof displayName == 'string' && displayName) { %>
                         <td class="text-center col-1">
-                            <a href="/book-list/edit/<%= BookList[count]._id %>" class="btn btn-primary btn-sm">
+                            <a href="/book-list/edit/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
                             <i class="fas fa-pencil-alt"></i> Edit
                             </a>
                         </td>
                         <td class="text-center col-1">
-                            <a href="/book-list/delete/<%= BookList[count]._id %>" class="btn btn-danger btn-sm">
+                            <a href="/book-list/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash-alt"></i> Delete
                             </a>
                         </td>

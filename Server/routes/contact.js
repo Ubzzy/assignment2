@@ -15,27 +15,27 @@ function requireAuth(req, res, next)
     next();
 }
 
-// connect to our Book Model
-let Book = require('../models/book');
+// connect to our contact Model
+let Contact = require('../models/contact');
 
-let bookController = require('../controllers/book')
+let contactController = require('../controllers/contact')
 
-// Get Route for the book list page - READ Operation
-router.get('/', bookController.displayBookList);
+// Get Route for the contact list page - READ Operation
+router.get('/', contactController.displayContactList);
 
 // GET Route for displaying the add page - CREATE Operation
-router.get('/add', requireAuth, bookController.displayAddPage);
+router.get('/add', requireAuth, contactController.displayAddPage);
 
 // POST Route for processing the add page - CREATE Operation
-router.post('/add', requireAuth, bookController.processAddPage);
+router.post('/add', requireAuth, contactController.processAddPage);
 
 // GET Route for displaying the edit page - UPDATE Operation
-router.get('/edit/:id', requireAuth, bookController.displayEditPage);
+router.get('/edit/:id', requireAuth, contactController.displayEditPage);
 
 // POST Route for processing the edit page - UPDATE Operation
-router.post('/edit/:id', requireAuth, bookController.processEditPage);
+router.post('/edit/:id', requireAuth, contactController.processEditPage);
 
 // GET to perform Deletion - DELETE Operation
-router.get('/delete/:id', requireAuth, bookController.performDelete);
+router.get('/delete/:id', requireAuth, contactController.performDelete);
 
 module.exports = router;

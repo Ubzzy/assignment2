@@ -3,34 +3,34 @@ let router = express.Router();
 let mongoose = require('mongoose');
 
 // reference to the model
-let Book = require('../models/book')
+let Contact = require('../models/contact')
 
-module.exports.displayBookList = (req,res,next) => {
-    Book.find((err, BookList) => {
+module.exports.displayContactList = (req,res,next) => {
+    Contact.find((err, ContactList) => {
         if(err)
         {
             return console.error(err);
         }
         else
         {
-            res.render('book/list', {title: 'Book List', BookList: BookList, displayName: req.user ? req.user.displayName : ''});
+            res.render('book/list', {title: 'Business Contacts', ContactList: ContactList, displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
 
 module.exports.displayAddPage = (req,res,next)=>{
-    res.render('book/add', {title: 'Add Book', displayName: req.user ? req.user.displayName : ''});
+    res.render('book/add', {title: 'Add Contact', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.processAddPage = (req,res,next)=>{
-    let newBook = Book({
+    let newContact = Contact({
+        "organization": req.body.organization,
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "price": req.body.price,
+        "email": req.body.email,
+        "phone": req.body.phone,
     });
 
-    Book.create(newBook, (err, Book)=>{
+    Contact.create(newContact, (err, Contact)=>{
         if(err)
         {
             console.log(err);
@@ -47,7 +47,7 @@ module.exports.processAddPage = (req,res,next)=>{
 module.exports.displayEditPage = (req,res,next)=>{
     let id = req.params.id;
 
-    Book.findById(id, (err, bookToEdit)=>{
+    Contact.findById(id, (err, ContactToEdit)=>{
         if(err)
         {
             console.log(err);
@@ -55,7 +55,7 @@ module.exports.displayEditPage = (req,res,next)=>{
         }else
         {
             // show the edit view
-            res.render('book/edit',{title: 'Edit Book', book: bookToEdit, displayName: req.user ? req.user.displayName : ''})
+            res.render('book/edit',{title: 'Edit Contact', Contact: ContactToEdit, displayName: req.user ? req.user.displayName : ''})
         }
     });
 }
@@ -63,15 +63,15 @@ module.exports.displayEditPage = (req,res,next)=>{
 module.exports.processEditPage = (req,res,next)=>{
     let id = req.params.id;
 
-    let updateBook = Book({
+    let updateContact = Contact({
         "_id": id, 
+        "organization": req.body.organization,
         "name": req.body.name,
-        "author": req.body.author,
-        "published": req.body.published,
-        "price": req.body.price,
+        "email": req.body.email,
+        "phone": req.body.phone,
     });
 
-    Book.updateOne({_id: id}, updateBook , (err) => {
+    Contact.updateOne({_id: id}, updateContact , (err) => {
         if(err)
         {
             console.log(err);
@@ -87,7 +87,7 @@ module.exports.processEditPage = (req,res,next)=>{
 module.exports.performDelete = (req,res,next)=>{
     let id = req.params.id;
 
-    Book.deleteOne({_id: id}, (err) =>{
+    Contact.deleteOne({_id: id}, (err) =>{
         if(err)
         {
             console.log(err);
