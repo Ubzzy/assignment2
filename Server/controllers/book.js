@@ -13,13 +13,13 @@ module.exports.displayBookList = (req,res,next) => {
         }
         else
         {
-            res.render('book/list', {title: 'Book List', BookList: BookList});
+            res.render('book/list', {title: 'Book List', BookList: BookList, displayName: req.user ? req.user.displayName : ''});
         }
     });
 }
 
 module.exports.displayAddPage = (req,res,next)=>{
-    res.render('book/add', {title: 'Add Book'});
+    res.render('book/add', {title: 'Add Book', displayName: req.user ? req.user.displayName : ''});
 }
 
 module.exports.processAddPage = (req,res,next)=>{
@@ -55,7 +55,7 @@ module.exports.displayEditPage = (req,res,next)=>{
         }else
         {
             // show the edit view
-            res.render('book/edit',{title: 'Edit Book', book: bookToEdit})
+            res.render('book/edit',{title: 'Edit Book', book: bookToEdit, displayName: req.user ? req.user.displayName : ''})
         }
     });
 }
