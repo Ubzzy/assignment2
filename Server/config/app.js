@@ -59,6 +59,7 @@ app.use(flash());
 app.use(passport.initialize());
 app.use(passport.session());
 
+
 // passport User configuration
 
 // Create a User model
@@ -71,7 +72,6 @@ passport.use(User.createStrategy());
 // serialize and de-serialize user info
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser())
-
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

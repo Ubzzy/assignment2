@@ -37,7 +37,7 @@ module.exports.processAddPage = (req,res,next)=>{
             res.end(err);
         }else
         {
-            // refresh book list  after add
+            // refresh contact list  after add
             res.redirect('/book-list')
         }
     });
